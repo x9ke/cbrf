@@ -1,2 +1,4 @@
-package org.cbrf.service.account;public interface AccountService {
+package org.cbrf.service.account;
+
+public interface AccountService {
 }

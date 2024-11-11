@@ -1,2 +1,4 @@
-package org.cbrf.service.operation;public interface OperationService {
+package org.cbrf.service.operation;
+
+public interface OperationService {
 }

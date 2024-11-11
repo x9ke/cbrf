@@ -1,18 +1,19 @@
-package org.cbrf.service;
+package org.cbrf.service.account;
 
 import lombok.AllArgsConstructor;
 import org.cbrf.dto.AccountInfo;
 import org.cbrf.model.Account;
 import org.cbrf.model.Client;
 import org.cbrf.model.enums.AccountStatus;
+import org.cbrf.service.client.ClientServiceImpl;
 
 import java.util.List;
 import java.util.Scanner;
 
 @AllArgsConstructor
-public class AccountService {
+public class AccountServiceImpl implements AccountService {
 
-    private final ClientService clientService;
+    private final ClientServiceImpl clientServiceImpl;
 
     private final Scanner scanner;
 
@@ -22,7 +23,7 @@ public class AccountService {
             return;
         }
 
-        Client client = clientService.selectClient(clients);
+        Client client = clientServiceImpl.selectClient(clients);
         if (client != null) {
             System.out.print("Введите номер счета: ");
                 String accountNumber = scanner.nextLine();

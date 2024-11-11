@@ -1,4 +1,4 @@
-package org.cbrf.service;
+package org.cbrf.service.client;
 
 import lombok.AllArgsConstructor;
 import org.cbrf.dto.ClientInfo;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 @AllArgsConstructor
-public class ClientService {
+public class ClientServiceImpl {
 
     private final Scanner scanner;
 
