@@ -6,33 +6,35 @@ import lombok.Setter;
 
 import org.cbrf.dto.AccountInfo;
 
+import java.math.BigDecimal;
+
 @AllArgsConstructor
 @Setter
 @Getter
 public class Account {
     private AccountInfo accountInfo;
 
-    public void deposit(double amount) {
+    public void deposit(BigDecimal amount) {
         if (isValidAmount(amount)) {
             updateBalance(amount);
         }
     }
 
-    public void withdraw(double amount) {
+    public void withdraw(BigDecimal amount) {
         if (isValidAmount(amount) && hasSufficientBalance(amount)) {
-            updateBalance(-amount);
+            updateBalance(amount.negate());
         }
     }
 
-    private boolean isValidAmount(double amount) {
-        return amount > 0;
+    private boolean isValidAmount(BigDecimal amount) {
+        return amount.compareTo(BigDecimal.ZERO) > 0;
     }
 
-    private boolean hasSufficientBalance(double amount) {
-        return accountInfo.getBalance() >= amount;
+    private boolean hasSufficientBalance(BigDecimal amount) {
+        return accountInfo.getBalance().compareTo(amount) >= 0;
     }
 
-    private void updateBalance(double amount) {
-        accountInfo.setBalance(accountInfo.getBalance() + amount);
+    private void updateBalance(BigDecimal amount) {
+        accountInfo.setBalance(accountInfo.getBalance().add(amount));
     }
 }

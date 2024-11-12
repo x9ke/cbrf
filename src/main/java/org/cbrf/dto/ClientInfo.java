@@ -30,8 +30,8 @@ public class ClientInfo {
      * Имя должно содержать только буквы и пробелы.
      * </p>
      */
-    @NotNull(message = "Полное имя не может быть пустым.")
-    @Pattern(regexp = "^[a-zA-Zа-яА-ЯёЁ\\s]+$", message = "Полное имя может содержать только буквы и пробелы.")
+   // @NotNull(message = "Полное имя не может быть пустым.")
+   // @Pattern(regexp = "^[a-zA-Zа-яА-ЯёЁ\\s]+$", message = "Полное имя может содержать только буквы и пробелы.")
     private String fullName;
 
     /**
@@ -40,8 +40,8 @@ public class ClientInfo {
      * Номер телефона должен быть в формате +код_страны(опционально) и 10 цифр.
      * </p>
      */
-    @NotNull(message = "Номер телефона не может быть пустым.")
-    @Pattern(regexp = "^(\\+\\d{1,3})?\\d{10}$", message = "Неверный формат телефонного номера.")
+   // @NotNull(message = "Номер телефона не может быть пустым.")
+   // @Pattern(regexp = "^(\\+\\d{1,3})?\\d{10}$", message = "Неверный формат телефонного номера.")
     private String phoneNumber;
 
     /**
@@ -50,8 +50,8 @@ public class ClientInfo {
      * ИНН должен состоять из 10 или 12 цифр.
      * </p>
      */
-    @NotNull(message = "ИНН не может быть пустым.")
-    @Pattern(regexp = "\\d{10}|\\d{12}", message = "ИНН должен состоять из 10 или 12 цифр.")
+  //  @NotNull(message = "ИНН не может быть пустым.")
+  //  @Pattern(regexp = "\\d{10}|\\d{12}", message = "ИНН должен состоять из 10 или 12 цифр.")
     private String inn;
 
     /**
@@ -60,7 +60,7 @@ public class ClientInfo {
      * Адрес не может быть пустым.
      * </p>
      */
-    @NotBlank(message = "Адрес не может быть пустым.")
+   // @NotBlank(message = "Адрес не может быть пустым.")
     private String address;
 
     /**

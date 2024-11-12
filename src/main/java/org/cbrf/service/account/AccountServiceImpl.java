@@ -7,6 +7,7 @@ import org.cbrf.model.Client;
 import org.cbrf.model.enums.AccountStatus;
 import org.cbrf.service.client.ClientService;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Scanner;
 
@@ -102,7 +103,7 @@ public class AccountServiceImpl implements AccountService {
                 .builder()
                     .accountNumber(accountNumber)
                     .bik(bik)
-                    .balance(0.0)
+                    .balance(BigDecimal.ZERO)
                     .status(AccountStatus.OPEN)
                     .currency(currency)
                 .build();
