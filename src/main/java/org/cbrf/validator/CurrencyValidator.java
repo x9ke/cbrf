@@ -4,6 +4,7 @@ import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.cbrf.model.enums.Currency;
 
+//TODO JavaDoc
 public class CurrencyValidator implements ConstraintValidator<ValidCurrency, String> {
 
     @Override

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 @AllArgsConstructor
-public class ClientServiceImpl {
+public class ClientServiceImpl implements ClientService {
 
     private final Scanner scanner;
 

@@ -5,7 +5,7 @@ import org.cbrf.dto.AccountInfo;
 import org.cbrf.model.Account;
 import org.cbrf.model.Client;
 import org.cbrf.model.enums.AccountStatus;
-import org.cbrf.service.client.ClientServiceImpl;
+import org.cbrf.service.client.ClientService;
 
 import java.util.List;
 import java.util.Scanner;
@@ -13,17 +13,17 @@ import java.util.Scanner;
 @AllArgsConstructor
 public class AccountServiceImpl implements AccountService {
 
-    private final ClientServiceImpl clientServiceImpl;
+    private final ClientService clientService;
 
     private final Scanner scanner;
 
-    public void createAccountForClient(List<Client> clients) {
+    public void createAccount(List<Client> clients) {
         if (clients.isEmpty()) {
             System.out.println("Клиентов не найдено.");
             return;
         }
 
-        Client client = clientServiceImpl.selectClient(clients);
+        Client client = clientService.selectClient(clients);
         if (client != null) {
             System.out.print("Введите номер счета: ");
                 String accountNumber = scanner.nextLine();
@@ -60,7 +60,7 @@ public class AccountServiceImpl implements AccountService {
         }
     }
 
-    public void closeAccountForClient(List<Client> clients) {
+    public void closeAccount(List<Client> clients) {
         List<Client> clientsWithOpenAccounts = clients.stream()
                 .filter(client -> client.hasOpenAccount(client.getClientInfo().getAccounts()))
                 .toList();

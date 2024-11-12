@@ -3,22 +3,22 @@ package org.cbrf.service.operation;
 import lombok.AllArgsConstructor;
 import org.cbrf.model.Account;
 import org.cbrf.model.Client;
-import org.cbrf.service.account.AccountServiceImpl;
-import org.cbrf.service.client.ClientServiceImpl;
+import org.cbrf.service.account.AccountService;
+import org.cbrf.service.client.ClientService;
 
 import java.util.List;
 import java.util.Scanner;
 
 @AllArgsConstructor
-public class OperationServiceImpl {
+public class OperationServiceImpl implements OperationService {
 
-    private final AccountServiceImpl accountServiceImpl;
+    private final AccountService accountServiceImpl;
 
-    private final ClientServiceImpl clientServiceImpl;
+    private final ClientService clientServiceImpl;
 
     private final Scanner scanner;
 
-    public void transferFunds(List<Client> clients) {
+    public void transfer(List<Client> clients) {
         Client senderClient = clientServiceImpl.selectClient(clients);
         if (senderClient != null) {
             Account senderAccount = accountServiceImpl.selectOpenAccount(senderClient);
@@ -44,7 +44,7 @@ public class OperationServiceImpl {
         }
     }
 
-    public void depositFunds(List<Client> clients) {
+    public void deposit(List<Client> clients) {
         Client client = clientServiceImpl.selectClient(clients);
         if (client != null) {
             Account account = accountServiceImpl.selectOpenAccount(client);

@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import java.util.Scanner;
 
+//TODO JavaDoc
 @AllArgsConstructor
 @Getter
 @Setter

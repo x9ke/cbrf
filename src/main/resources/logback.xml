@@ -1,0 +1,17 @@
+<configuration>
+    <!-- Определение аппендера STDOUT -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Уровень логирования по умолчанию для всех логеров -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <!-- Настройка для подавления логов Hibernate Validator -->
+    <logger name="org.hibernate.validator" level="WARN"/>
+    <logger name="org.jboss.logging" level="WARN"/>
+</configuration>
