@@ -10,9 +10,9 @@ import java.util.List;
 public interface ClientService {
 
     /**
-     * Создает новых клиентов на основе предоставленного списка.
+     * Создает новых клиентов.
      *
-     * @param clients список клиентов, которых необходимо создать.
+     * @param clients список клиентов.
      */
     void createClient(List<Client> clients);
 
@@ -20,7 +20,7 @@ public interface ClientService {
      * Выбирает клиента из предоставленного списка.
      *
      * @param clients список клиентов, из которого необходимо выбрать клиента.
-     * @return выбранный клиент из списка, либо null, если клиент не найден.
+     * @return выбранный клиент из списка
      */
     Client selectClient(List<Client> clients);
 }
